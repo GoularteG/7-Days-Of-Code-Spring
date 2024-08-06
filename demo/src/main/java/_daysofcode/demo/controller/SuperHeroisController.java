@@ -28,7 +28,7 @@ public class SuperHeroisController {
 
     @GetMapping
     public ResponseEntity<Page<DadosListagemSuperHerois>> listar(@PageableDefault(size = 10,sort = {"nome"}) Pageable paginacao){
-        var p= repository.findAllByAtivoTrue(paginacao).map(DadosListagemSuperHerois::new);
+        var p= repository.findAll(paginacao).map(DadosListagemSuperHerois::new);
         return ResponseEntity.ok(p);
     }
 
@@ -43,15 +43,11 @@ public class SuperHeroisController {
 
     @DeleteMapping("/{id}")
     @Transactional
-    public ResponseEntity excluir(@PathVariable Long id){
-        var superHerois = repository.findById(id);
-        if (superHerois.isPresent()) {
-            repository.delete(superHerois.get());
-            return ResponseEntity.noContent().build();
-        } else {
+    public ResponseEntity excluir(@PathVariable Long id) {
+        if (!repository.existsById(id)) {
             return ResponseEntity.notFound().build();
         }
+        repository.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
-
-
 }

@@ -20,16 +20,13 @@ public class SuperHerois {
     private Long id;
 
 
-    @Column(nullable = false)
     private String nome;
-    @Column(nullable = false)
     private String poder;
     private String genero;
-    @Column(nullable = false)
     private String classificacao;
     private String idade;
     private String paisDeOrigem;
-
+    private boolean ativo;
 
     public SuperHerois(DadosSuperHerois dados){
         this.nome=dados.nome();
@@ -61,5 +58,9 @@ public class SuperHerois {
             this.nome=dados.paisDeOrigem();
         }
 
+    }
+
+    public void excluir() {
+        this.ativo=false;
     }
 }
