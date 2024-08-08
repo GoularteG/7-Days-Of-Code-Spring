@@ -38,24 +38,24 @@ public class SuperHerois {
     }
 
 
-    public void atualizarInformacoes(DadosAtualizacaoSuperHerois dados){
-        if (dados.nome() != null){
-            this.nome=dados.nome();
+    public void atualizarInformacoes(DadosAtualizacaoSuperHerois dados) {
+        if (dados.nome() != null) {
+            this.nome = dados.nome();
         }
-        if (dados.poder() != null){
-            this.nome=dados.poder();
+        if (dados.poder() != null) {
+            this.nome = dados.poder();
         }
-        if (dados.genero() != null){
-            this.nome=dados.genero();
+        if (dados.genero() != null) {
+            this.nome = dados.genero();
         }
-        if (dados.classificacao() != null){
-            this.nome=dados.classificacao();
+        if (dados.classificacao() != null) {
+            this.nome = dados.classificacao();
         }
-        if (dados.idade() != null){
-            this.nome=dados.idade();
+        if (dados.idade() != null) {
+            this.nome = dados.idade();
         }
-        if (dados.paisDeOrigem() != null){
-            this.nome=dados.paisDeOrigem();
+        if (dados.paisDeOrigem() != null) {
+            this.nome = dados.paisDeOrigem();
         }
 
     }
