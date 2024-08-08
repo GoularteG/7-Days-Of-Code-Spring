@@ -9,6 +9,8 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("superherois")
 public class SuperHeroisController {
@@ -32,6 +34,11 @@ public class SuperHeroisController {
         return ResponseEntity.ok(p);
     }
 
+    @GetMapping("/pesquisa")
+    public ResponseEntity barraDePesquisa(@RequestParam String nome){
+       List<SuperHerois> superHerois= repository.findByNome(nome);
+        return ResponseEntity.ok(superHerois);
+    }
 
     @PutMapping
     @Transactional
