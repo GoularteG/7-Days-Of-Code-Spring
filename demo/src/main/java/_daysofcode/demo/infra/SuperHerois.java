@@ -2,6 +2,7 @@ package _daysofcode.demo.infra;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,12 +20,17 @@ public class SuperHerois {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
+    @NotBlank(message = "Nome é obrigatório!")
+    @Column(nullable = false)
     private String nome;
+    @NotBlank(message = "Poder é obrigatório!")
+    @Column(nullable = false)
     private String poder;
     private String genero;
     private String classificacao;
     private String idade;
+    @NotBlank(message = "País é obrigatório!")
+    @Column(nullable = false)
     private String paisDeOrigem;
     private boolean ativo;
 
