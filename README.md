@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/87034986-4d24-47c9-9114-b0ae72b0fc09)
+![image](https://github.com/user-attachments/assets/3786282c-b597-4b6b-8bd6-00340359fc99)
 
 # Gerenciador de Super-Heróis 🦸
 
